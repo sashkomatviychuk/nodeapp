@@ -12,4 +12,4 @@
 * cd nodeapp
 * Run npm install
 * Run node index.js
-* See page on [localhost:8888](localhost:8888)
+* See page on [localhost:8888](http://localhost:8888)
