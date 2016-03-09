@@ -3,9 +3,10 @@
 <h1>Most repeated records</h1>
 <div class="col-md-12">
 	<form action="">
-		<input name="total" type="checkbox" <%if (params.total) { %> checked="checked"
-		<% } %> > Total
-		<input name="count" type="checkbox" <%if (params.count) { %> checked="checked" <% } %> > Count
+		<input name="total" id="total" type="checkbox" <%if (params.total) { %> checked="checked" <% } %> >
+		<label for="total">Total</label>
+		<input name="count" id="count" type="checkbox" <%if (params.count) { %> checked="checked" <% } %> >
+		<label for="count">Count</label>
 		<input type="submit" value="select" class="btn btn-sm">
 	</form>
 </div>

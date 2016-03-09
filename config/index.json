@@ -1,6 +1,7 @@
 {
 	"port": 8888,
 	"limit": 25,
+	"insertRowsCount": 100000,
 	"mongo": {
 		"connection": "mongodb://localhost/testdb"
 	}

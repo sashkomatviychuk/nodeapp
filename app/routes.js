@@ -32,15 +32,18 @@ router.get('/remove', function (req, res, next) {
 router.get('/generate', function (req, res, next) {
 	// generate records
 	var data, model;
+	// list of objects for insert
+	var list = [];
 
-	// generate new records
-	for (var i = 0; i < 100; ++i) {
+	// generate records
+	for (var i = 0; i < config.insertRowsCount; ++i) {
 		// get fake object
 		data = faker.getObject();
-		// save
-		model = new ListModel(data);
-		model.save();
+		list.push(data);
 	}
+
+	// save
+	ListModel.collection.insert(list);
 
 	return res.redirect('/');
 });
@@ -58,7 +61,7 @@ router.get('/repeated', function (req, res, next) {
 		},
 		{
 			$sort: {
-				total: -1
+				count: -1
 			}
 		},
 		{
