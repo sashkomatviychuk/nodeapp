@@ -6,15 +6,17 @@ var express = require('express'),
     path = require('path'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
+    moment = require('moment'),
     config = require('../config'),
-    routes = require('./routes'),
-    ListModel = require('./model');
+    routes = require('./routes');
 
 // configuration
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+
+app.locals.moment = moment
 
 // views config
 app.engine('html', ejs);

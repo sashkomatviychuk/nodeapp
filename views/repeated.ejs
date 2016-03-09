@@ -1,0 +1,35 @@
+<% layout('base') -%>
+
+<h1>Most repeated records</h1>
+<div class="col-md-12">
+	<form action="">
+		<input name="total" type="checkbox" <%if (params.total) { %> checked="checked"
+		<% } %> > Total
+		<input name="count" type="checkbox" <%if (params.count) { %> checked="checked" <% } %> > Count
+		<input type="submit" value="select" class="btn btn-sm">
+	</form>
+</div>
+<div class="col-md-6">
+	<table class="table table-strpped">
+		<tr>
+			<td>Title</td>
+			<%if (params.total) { %>
+				<td>Total value</td>
+			<% } %>
+			<%if (params.count) { %>
+				<td>Count of repeats</td>
+			<% } %>
+		</tr>
+		<% list.forEach(function (el) { %>
+			<tr>
+				<td><%=el._id %></td>
+				<%if (params.total) { %>
+					<td><%=el.total %></td>
+				<% } %>
+				<%if (params.count) { %>
+					<td><%=el.count %></td>
+				<% } %>
+			</tr>
+		<% }); %>
+	</table>
+</div>

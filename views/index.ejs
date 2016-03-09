@@ -1,0 +1,20 @@
+<% layout('base') -%>
+
+<h1>Last records</h1>
+
+<div class="col-md-6">
+	<table class="table table-strpped">
+		<tr>
+			<td>Title</td>
+			<td>Value</td>
+			<td>Created at</td>
+		</tr>
+		<% list.forEach(function (el) { %>
+			<tr>
+				<td><%=el.title %></td>
+				<td><%=el.value %></td>
+				<td><%=moment(el.created_at).format('DD.MM.YYYY, HH:mm:ss') %></td>
+			</tr>
+		<% }); %>
+	</table>
+</div>
