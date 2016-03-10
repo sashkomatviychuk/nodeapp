@@ -1,6 +1,6 @@
 # nodeapp
 
-## Requiremetns
+## Requirements
 
 * Nodejs
 * Npm
