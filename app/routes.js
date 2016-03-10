@@ -21,7 +21,6 @@ router.get('/', function (req, res, next) {
 });
 
 // remove records
-
 router.get('/remove', function (req, res, next) {
 	ListModel.remove(function (err, removed) {
 		return res.redirect('/');
